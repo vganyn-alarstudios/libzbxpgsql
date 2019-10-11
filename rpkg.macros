@@ -1,0 +1,9 @@
+function git_commits_no {
+               total_commits="$(git rev-list --all --count)"
+               echo -n "$total_commits"
+           }
+
+function git_tag_last {
+                tag_last="$(git describe --abbrev=0 | tr -d v)"
+                echo -n "$tag_last"
+           }
