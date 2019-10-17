@@ -4,7 +4,7 @@
 
 Name:       {{{ git_dir_name }}}
 Version:    {{{ git_tag_last }}}
-Release:    {{{ git_commits_no }}}%{?dist}
+Release:    {{{ git_commits_since_last_tag_add1 }}}%{?dist}
 Summary:    PostgreSQL monitoring module for Zabbix
 
 Group:      Applications/Internet
@@ -65,11 +65,4 @@ rm -rf %{buildroot}
 /usr/bin/systemctl try-restart zabbix-agent.service >/dev/null 2>&1 || :
 
 %changelog
-* Fri Feb 8  2019 Anatolii Vorona <vorona.tolik@gmail.com>    - 3.4
-- Updated spec for EPEL7 and systemd
-
-* Tue Jan 28 2014 Vicente Dominguez <twitter:@vicendominguez> - 2.00
-- No malloc, random value solved and first production version
-
-* Fri Jan 24 2014 Vicente Dominguez <twitter:@vicendominguez> - 0.99
-- rpm for rhel6 (fast-way) 
+{{{ git_changelog }}}

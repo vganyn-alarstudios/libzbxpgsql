@@ -7,3 +7,8 @@ function git_tag_last {
                 tag_last="$(git describe --abbrev=0 | tr -d v)"
                 echo -n "$tag_last"
            }
+
+function git_commits_since_last_tag_add1 {
+                commits_since_since_last_tag="$(git rev-list  `git rev-list --tags --no-walk --max-count=1`..HEAD --count)"
+                echo -n $commits_since_since_last_tag+1 | bc
+           }
